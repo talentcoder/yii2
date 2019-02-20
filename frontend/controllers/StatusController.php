@@ -11,9 +11,11 @@ class StatusController extends Controller
     {
         $model=new Status;
 
-        // if($model->load(Yii::$app->request->post())&& $model->validate())
-        // {
-            return $this->render('create', ['model'=>$model]);
-        // }
+        if($model->load(Yii::$app->request->post())&& $model->validate())
+        {
+            return $this->render('view', ['model'=>$model]);
+        }else{
+            return $this->render('create', ['model'=> $model]);
+        }
     }
 }
