@@ -1,5 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-
-<h1><?= Html::encode()
+use app\models\Status;
+?>
+<h1><?= Html::encode("$text")  ?><h1>
