@@ -75,6 +75,12 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    //add1-say function
+    public function actionSay($target = 'world')
+    {
+        return $this->render('say', ['target'=> $target]);
+    }
+
     /**
      * Logs in a user.
      *
