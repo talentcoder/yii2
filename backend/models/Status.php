@@ -18,10 +18,6 @@ class Status extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-
-    const PERMISSIONS_PRIVATE=10;
-    const PERMISSIONS_PUBLIC=20;
-
     public static function tableName()
     {
         return 'status';
@@ -36,22 +32,6 @@ class Status extends \yii\db\ActiveRecord
             [['message'], 'string'],
             [['permissions', 'created_at', 'updated_at'], 'integer'],
         ];
-    }
-
-
-    //add
-    public function getPermissions()
-    {
-        return array (self::PERMISSIONS_PRIVATE=>'Private', self::PERMISSIONS_PUBLIC=>'Public');
-    }
-
-    public function getPermissionsLabel($permissions)
-    {
-        if($permissions==self::PERMISSIONS_PUBLIC){
-            return 'Public';
-        }else{
-            return 'Private';
-        }
     }
 
     /**
